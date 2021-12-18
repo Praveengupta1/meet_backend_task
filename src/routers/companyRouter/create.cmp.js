@@ -9,7 +9,7 @@ module.exports = async(req, res)=>{
         let isCmp = await Company.findOne({cmp_name });
         
         if(isCmp){
-            throw {message : "Already exist company with this nampe", data : isCmp};
+            throw {message : "Already exist company with this name", data : isCmp};
         }
         let newCmp = new Company({cmp_name});
         await newCmp.save();
